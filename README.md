@@ -1,4 +1,6 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center">
+    <img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400">
+    <img src="https://netshow.me/wp-content/uploads/2020/03/featured-image-site.gif" width="180"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -7,42 +9,58 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Desafio Netshow.me: Soluções completas em vídeos online
+Foi realizado a criação de uma API em laravel e o front em React<br>
+Para emular o projeto, basta seguir os requisitos básico do Laravel 7.x, que se encontra no link: https://laravel.com/docs/7.x
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Após o clone do projeto, basta entrar no projeto e seguir o procedimento abaixo<br>
+<ul>
+    <li>executar o comando "composer install"</li>
+    <li>npm install</li>
+    <li>executar o comando "git clone https://github.com/laradock/laradock.git"</li>
+</ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Com isso, a API e o front direcionado na rota raiz ('/').<br>
+A API utiliza o laradock para instanciar o docker
 
-## Learning Laravel
+Para utilizar o Docker na api, entre na pasta laradock e execute o comando "sudo docker-compose up -d nginx mysql phpmyadmin".<br>
+OBS: Após o git clone do laradock, deve-se configurar um arquivo .env dentro da pasta laradock, existe um arquivo .env.example para melhor entendimento.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+#### Rotas da API
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
++--------+----------+-------------+----------------+----------------------------------------------+------------+
+| Domain | Method   | URI         | Name           | Action                                       | Middleware |
++--------+----------+-------------+----------------+----------------------------------------------+------------+
+|        | GET|HEAD | /           |                | Closure                                      | web        |
+|        | POST     | api/contact | contacts.store | App\Http\Controllers\ContactController@store | api        |
++--------+----------+-------------+----------------+----------------------------------------------+------------+
 
-### Premium Partners
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+#### / 
+```
+Rota do tipo GET, formulario para cadastrar informação de contato 
+Exemplo do Response abaixo
+```
+<img src="https://i.imgur.com/ITaQvrw.png">
+<br>
+
+#### api/contact 
+```
+Rota do tipo POST, armazena a informação de contato 
+Exemplo do Response abaixo
+```
+<img src="https://i.imgur.com/WkXl3Nu.png">
+<br>
+
+#### TDD
+<img src="https://i.imgur.com/JzP4grb.png">
+<br>
+
 
 ## Contributing
 
